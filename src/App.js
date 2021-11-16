@@ -8,42 +8,40 @@ class App extends React.Component {
     super() 
     this.state = {
       currentNumber: '',
-      operation: ''
+      operation: '',
     }
   }
 
   handleNumber = (event) => {
-    event.preventDefault()
     let number = this.state.currentNumber; 
         number += event.target.name;
         this.setState({currentNumber: number})
   }
 
-  allClear = (event) => {
+  allClear = () => {
     this.setState({currentNumber: ''})
+  }
+
+  handleInteger = () => {
+    let number = this.state.currentNumber;
+    this.setState({currentNumber: Number(number * -1)})
   }
 
   render() {
     return (
       <div className="App">
         <div className="calculator">
-          <div>
             <Result currentNumber={this.state.currentNumber || '0'} />
-          </div>
-          <div>
             <Buttons 
               handleNumber={this.handleNumber}
-              allClear={this.allClear} />
-          </div>
+              allClear={this.allClear} 
+              handleInteger={this.handleInteger}
+              />
         </div>
       </div>
     );
   }
 }
-
-
-
-
        
 export default App;
 

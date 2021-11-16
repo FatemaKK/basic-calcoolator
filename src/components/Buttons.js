@@ -1,12 +1,10 @@
-
-
 const Buttons = (props) => {
   return (
     <>
       <div className='buttons'>
         <div className='row'>
           <button name ='AC' onClick={props.allClear}>AC</button>
-          <button name ='+/-'>+/-</button>
+          <button name ='+/-' onClick={props.handleInteger}>+/-</button>
           {/* <button>%</button> */}
           <button name ='÷' >÷</button>
         </div>
