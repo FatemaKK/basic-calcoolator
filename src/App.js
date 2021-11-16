@@ -1,25 +1,49 @@
-import logo from './logo.svg';
+import React from 'react';
 import './App.css';
+import Buttons from './components/Buttons';
+import Result from './components/Result';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends React.Component {
+  constructor() {
+    super() 
+    this.state = {
+      currentNumber: '',
+      operation: ''
+    }
+  }
+
+  handleNumber = (event) => {
+    event.preventDefault()
+    let number = this.state.currentNumber; 
+        number += event.target.name;
+        this.setState({currentNumber: number})
+  }
+
+  allClear = (event) => {
+    this.setState({currentNumber: ''})
+  }
+
+  render() {
+    return (
+      <div className="App">
+        <div className="calculator">
+          <div>
+            <Result currentNumber={this.state.currentNumber || '0'} />
+          </div>
+          <div>
+            <Buttons 
+              handleNumber={this.handleNumber}
+              allClear={this.allClear} />
+          </div>
+        </div>
+      </div>
+    );
+  }
 }
 
+
+
+
+       
 export default App;
+
