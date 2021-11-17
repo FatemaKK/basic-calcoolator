@@ -9,7 +9,7 @@ class App extends React.Component {
     this.state = {
       currentNumber: '0',
       operation: '',
-      previousNumber: [],
+      previousNumber: '',
     }
   }
   
