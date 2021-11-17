@@ -9,7 +9,7 @@ class App extends React.Component {
     this.state = {
       currentNumber: '0',
       operation: '',
-      previousNumber: [],
+      previousNumber: '',
     }
   }
   
@@ -27,7 +27,7 @@ class App extends React.Component {
     this.setState({currentNumber: number * -1})
   }
   
-  '+' = (a,b) => a + b;
+  '+' = (a, b) => a + b;
   '-' = (a, b) => a - b;
   'x' = (a, b) => a * b;
   '÷' = (a, b) => a / b;
