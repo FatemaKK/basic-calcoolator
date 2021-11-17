@@ -1,7 +1,9 @@
 const Result = (props) => {
   return (
     <>
-        <textarea className="userInput" value={props.currentNumber}/>
+      <div className="result">
+        <textarea className="userInput" value={props.currentNumber || props.operation}/>
+      </div>
     </>
   );
 };
