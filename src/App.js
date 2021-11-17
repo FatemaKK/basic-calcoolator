@@ -27,7 +27,7 @@ class App extends React.Component {
     this.setState({currentNumber: number * -1})
   }
   
-  '+' = (a,b) => a + b;
+  '+' = (a, b) => a + b;
   '-' = (a, b) => a - b;
   'x' = (a, b) => a * b;
   '÷' = (a, b) => a / b;
